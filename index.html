@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>I Love Youuu Babyy ❤️</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+
+        background: #fff0f6;
+
+        font-family: Arial, sans-serif;
+
+        cursor: pointer;
+      }
+
+      /* =========================
+           SOFT PINK BACKGROUND
+        ========================= */
+
+      body::before {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+
+        background:
+          radial-gradient(circle at 20% 20%, #ffd6e8 0%, transparent 35%),
+          radial-gradient(circle at 80% 25%, #ffc1dc 0%, transparent 35%),
+          radial-gradient(circle at 50% 85%, #ffdbea 0%, transparent 40%);
+
+        z-index: -2;
+      }
+
+      /* =========================
+           CENTER CONTENT
+        ========================= */
+
+      .content {
+        position: absolute;
+
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+
+        text-align: center;
+
+        z-index: 100;
+
+        width: 100%;
+
+        padding: 20px;
+
+        pointer-events: none;
+      }
+
+      /* =========================
+           MAIN TEXT
+        ========================= */
+
+      h1 {
+        color: #ff8fbc;
+
+        font-family:
+          "Zapfino", "Apple Chancery", "Snell Roundhand", "Brush Script MT",
+          cursive;
+
+        font-size: clamp(45px, 8vw, 110px);
+
+        font-weight: normal;
+
+        line-height: 1.3;
+
+        white-space: nowrap;
+
+        text-shadow:
+          0 0 3px white,
+          0 0 8px #ff4f9a,
+          0 0 18px #ff4f9a,
+          0 0 35px #ff8fbc,
+          0 0 55px #ffc1dc;
+
+        animation: heartbeat 1.5s infinite;
+      }
+
+      /* =========================
+           SUBTITLE
+        ========================= */
+
+      .subtitle {
+        margin-top: 25px;
+
+        color: #ff70a8;
+
+        font-size: 24px;
+
+        letter-spacing: 2px;
+
+        text-shadow:
+          0 0 5px white,
+          0 0 12px #ff8fbc,
+          0 0 20px #ffc1dc;
+      }
+
+      /* =========================
+           FLOATING HEARTS
+        ========================= */
+
+      .heart {
+        position: absolute;
+
+        bottom: -80px;
+
+        color: #ffc1dc;
+
+        font-size: 30px;
+
+        text-shadow:
+          -1px -1px 0 #ff4f9a,
+          1px -1px 0 #ff4f9a,
+          -1px 1px 0 #ff4f9a,
+          1px 1px 0 #ff4f9a,
+          0 0 5px white,
+          0 0 12px #ff5fa2,
+          0 0 20px #ff9bc5,
+          0 0 30px #ffb6d5;
+
+        animation: floatUp linear infinite;
+
+        opacity: 0.9;
+
+        pointer-events: none;
+      }
+
+      @keyframes floatUp {
+        0% {
+          transform: translateY(0) rotate(0deg) scale(0.7);
+
+          opacity: 0;
+        }
+
+        10% {
+          opacity: 0.9;
+        }
+
+        50% {
+          transform: translateY(-50vh) rotate(180deg) scale(1);
+        }
+
+        90% {
+          opacity: 0.9;
+        }
+
+        100% {
+          transform: translateY(-120vh) rotate(360deg) scale(1.2);
+
+          opacity: 0;
+        }
+      }
+
+      /* =========================
+           MAIN TEXT HEARTBEAT
+        ========================= */
+
+      @keyframes heartbeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(1.06);
+        }
+      }
+
+      /* =========================
+           CLICK LOVE MESSAGE
+        ========================= */
+
+      .love-message {
+        position: fixed;
+
+        z-index: 1000;
+
+        pointer-events: none;
+
+        color: #ff4f9a;
+
+        font-family: "Zapfino", "Apple Chancery", "Snell Roundhand", cursive;
+
+        font-size: 24px;
+
+        font-weight: bold;
+
+        white-space: nowrap;
+
+        text-shadow:
+          0 0 4px white,
+          0 0 8px #ff4f9a,
+          0 0 15px #ff8fbc,
+          0 0 25px #ffc1dc;
+
+        animation: lovePop 2s ease-out forwards;
+      }
+
+      /* =========================
+           LOVE MESSAGE ANIMATION
+        ========================= */
+
+      @keyframes lovePop {
+        0% {
+          opacity: 0;
+
+          transform: translate(-50%, -50%) scale(0.3) rotate(-8deg);
+        }
+
+        15% {
+          opacity: 1;
+
+          transform: translate(-50%, -50%) scale(1.2) rotate(3deg);
+        }
+
+        35% {
+          transform: translate(-50%, -80%) scale(1) rotate(-2deg);
+        }
+
+        100% {
+          opacity: 0;
+
+          transform: translate(-50%, -220%) scale(0.8) rotate(8deg);
+        }
+      }
+
+      /* =========================
+           LITTLE HEART AROUND MESSAGE
+        ========================= */
+
+      .click-heart {
+        position: fixed;
+
+        z-index: 999;
+
+        pointer-events: none;
+
+        font-size: 20px;
+
+        color: #ff8fbc;
+
+        text-shadow:
+          0 0 5px white,
+          0 0 12px #ff4f9a,
+          0 0 20px #ff8fbc;
+
+        animation: clickHeart 1.5s ease-out forwards;
+      }
+
+      @keyframes clickHeart {
+        0% {
+          opacity: 0;
+
+          transform: translate(-50%, -50%) scale(0.2);
+        }
+
+        20% {
+          opacity: 1;
+
+          transform: translate(-50%, -50%) scale(1.2);
+        }
+
+        100% {
+          opacity: 0;
+
+          transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y)))
+            scale(0.6);
+        }
+      }
+
+      /* =========================
+           MOBILE
+        ========================= */
+
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 42px;
+          white-space: normal;
+        }
+
+        .subtitle {
+          font-size: 18px;
+        }
+
+        .love-message {
+          font-size: 19px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =========================
+         CENTER MESSAGE
+    ========================= -->
+
+    <div class="content">
+      <h1>I LOVEEEEEE YOUUUUU❤️</h1>
+
+      <div class="subtitle">Forever & Always 💕</div>
+    </div>
+
+    <script>
+      /* =========================
+           BACKGROUND HEARTS
+        ========================= */
+
+      function createBackgroundHearts() {
+        for (let i = 80; i > 0; i--) {
+          const heart = document.createElement("div");
+
+          heart.classList.add("heart");
+
+          heart.innerHTML = "♥";
+
+          heart.style.left = Math.random() * 100 + "vw";
+
+          heart.style.fontSize = Math.random() * 35 + 15 + "px";
+
+          heart.style.animationDuration = Math.random() * 7 + 5 + "s";
+
+          heart.style.animationDelay = Math.random() * 8 + "s";
+
+          heart.style.opacity = Math.random() * 0.5 + 0.4;
+
+          document.body.appendChild(heart);
+        }
+      }
+
+      /* =========================
+           CLICK / TOUCH EFFECT
+        ========================= */
+
+      document.addEventListener("click", function (event) {
+        createLoveMessage(event.clientX, event.clientY);
+      });
+
+      /* =========================
+           CREATE "I LOVE YOU BABYY"
+        ========================= */
+
+      function createLoveMessage(x, y) {
+        const message = document.createElement("div");
+
+        message.classList.add("love-message");
+
+        message.innerHTML = "I LOVE YOUUU BABYY 💗";
+
+        message.style.left = x + "px";
+
+        message.style.top = y + "px";
+
+        document.body.appendChild(message);
+
+        /* Remove after animation */
+
+        setTimeout(() => {
+          message.remove();
+        }, 2000);
+
+        /* Create little hearts */
+
+        for (let i = 0; i < 8; i++) {
+          createClickHeart(x, y);
+        }
+      }
+
+      /* =========================
+           LITTLE HEARTS
+        ========================= */
+
+      function createClickHeart(x, y) {
+        const heart = document.createElement("div");
+
+        heart.classList.add("click-heart");
+
+        heart.innerHTML = "♥";
+
+        heart.style.left = x + "px";
+
+        heart.style.top = y + "px";
+
+        /* Random direction */
+
+        const randomX = (Math.random() - 0.5) * 150;
+
+        const randomY = (Math.random() - 0.5) * 150;
+
+        heart.style.setProperty("--x", randomX + "px");
+
+        heart.style.setProperty("--y", randomY + "px");
+
+        heart.style.animationDelay = Math.random() * 0.2 + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 1700);
+      }
+
+      /* =========================
+           START HEARTS
+        ========================= */
+
+      createBackgroundHearts();
+    </script>
+  </body>
+</html>
